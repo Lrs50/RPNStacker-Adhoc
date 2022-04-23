@@ -17,7 +17,6 @@ public class RPNStackerAdhoc {
 
                 values.push(Float.parseFloat(string));
                 
-
             }
             catch (NumberFormatException ex){
                 float b = values.pop();
@@ -27,7 +26,6 @@ public class RPNStackerAdhoc {
                 if(logging) System.out.println("Pop "+ a);
                 if(logging) System.out.println("Pop "+ b);
                 
-
                 if(string.equals("+")){
                     result = a+b;
                 } else if (string.equals("-")){
@@ -44,8 +42,6 @@ public class RPNStackerAdhoc {
                     values.push(result);
                     if(logging) System.out.println("Push "+result);
                 }
-                
-
             }
         }
 
