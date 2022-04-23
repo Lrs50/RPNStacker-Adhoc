@@ -13,6 +13,12 @@ public class RPNStackerAdhoc {
     public static void main(String[] args) throws IOException{
 
         Boolean logging = false;
+        if(args.length>0){
+            if(args[0].toLowerCase().equals("logging")){
+                logging = true;
+            }
+        }
+    
         List<String> content = Files.readAllLines(Paths.get("Avaliate.stk"));
         ArrayList<Token> tokens= new ArrayList<Token>();
 
@@ -53,7 +59,7 @@ public class RPNStackerAdhoc {
 
         for (Token token : tokens) {
             if(logging) System.out.println(token.toString());
-            
+
             if(token.type==TokenType.NUM){
                 values.push(Float.parseFloat(token.lexeme));
                 if(logging) System.out.println("Push "+values.peek());
