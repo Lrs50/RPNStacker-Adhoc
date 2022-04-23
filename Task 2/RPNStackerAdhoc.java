@@ -26,7 +26,7 @@ public class RPNStackerAdhoc {
         for(String string : content){
             Token temp = new Token(TokenType.EOF,string);
 
-            if(string.matches("[0-9]+.*[0-9]*")){
+            if(string.matches("[0-9]")){
                 temp = new Token(TokenType.NUM,string);;
             }else{
 
